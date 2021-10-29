@@ -67,7 +67,9 @@
 			//第一题③
 				const a123 = document.querySelector('#third p')
 				let a5= new Date();
-				a123.textContent = (`${a5.getFullYear()}年${a5.getMonth()}月${a5.getDay()}日${a5.getHours()}时${a5.getMinutes()}分${a5.getSeconds()}秒星期${a5.getDay()}`);
+				let mon=['一','二','三','四','五','六','七','八','九','十','十一','十二'];
+				let weekend = ['一','二','三','四','五','六','日'];
+				a123.textContent = (`${a5.getFullYear()}年${mon[a5.getMonth()]}月${a5.getDate()}日${a5.getHours()}时${a5.getMinutes()}分${a5.getSeconds()}秒星期${weekend[a5.getDay()-1	]}`);
 			//第一题④
 			var a4 = document.querySelector('#fourth .a');
 			const a41 = document.querySelector('#fourth .a1');
@@ -114,7 +116,7 @@
 			function dd(){
 				const d1 = document.querySelector('#seven p');
 				let d = new Date();
-				d1.textContent = (`${d.getFullYear()}年${d.getMonth()}月${d.getDay()}日${d.getHours()}时${d.getMinutes()}分${d.getSeconds()}秒星期${d.getDay()}`);
+				d1.textContent = (`${d.getFullYear()}年${mon[d.getMonth()]}月${d.getDate()}日${d.getHours()}时${d.getMinutes()}分${d.getSeconds()}秒星期${weekend[d.getDay()-1	]}`);
 			}
 			dd();
 			setInterval(dd,1000);
