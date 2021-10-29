@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="first">
+			<h1>第一题</h1>
+			<h2>①</h2>
+			<p></p>
+		</div>
+		<hr >
+		<div id="second">
+			<h2>第一题②</h2>
+			<p></p>
+		</div>
+		<hr >
+		<div id="third">
+			<h2>第一题③</h2>
+			<p></p>
+		</div>
+		<hr >
+		<div id="fourth">
+			<h2>第一题④</h2>
+			<input type="text" class="a">
+			<button class="a1">点击检测</button>
+			<p></p>
+		</div>
+		<hr >
+		<div id="five">
+			<h1>第二题</h1>
+			<p></p>
+			<button>点击显示</button>
+		</div>
+		<hr >
+		<div id="six">
+			<h1>第三题</h1>
+			<input type="text" class="c"/>
+			<select class="c1">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+			<input type="text" class="c2"/>
+			<button>=</button>
+			<input type="text" class="c3"/>
+		</div>
+		<hr >
+		<div id="seven">
+			<h1>第四题</h1>
+			<p></p>
+		</div>
+		<!-- JS -->
+		<script>
+			//第一题①
+				const a = [1,2,3,4,'a','b'];
+				a.reverse();
+				let a1 = document.querySelector('#first p');
+				a1.textContent = a;
+			//第一题②
+				const a2 = '10.1.50.245';
+				const a21 = a2.substr(0,a2.length-1);
+				let a22 = document.querySelector('#second p');
+				a22.textContent = a21+'*';
+			//第一题③
+				const a123 = document.querySelector('#third p')
+				let a5= new Date();
+				a123.textContent = (`${a5.getFullYear()}年${a5.getMonth()}月${a5.getDay()}日${a5.getHours()}时${a5.getMinutes()}分${a5.getSeconds()}秒星期${a5.getDay()}`);
+			//第一题④
+			var a4 = document.querySelector('#fourth .a');
+			const a41 = document.querySelector('#fourth .a1');
+			const a42 = document.querySelector('#fourth p')
+			a41.onclick = function() {
+				if (a4.value.length<=10 && a4.value.length>=2) {
+						a42.textContent ='字符串长度符合要求';
+					}else {
+						a42.textContent = '字符串长度不符合要求';
+					}
+			}
+			//第二题
+			const b = document.querySelector('#five p');
+			const b1 = document.querySelector('#five button');
+			let b2 = Math.floor(Math.random()*10);
+			let b3 = Math.floor(Math.random()*10);
+			let b4 = Math.floor(Math.random()*10);
+			let b5 = Math.floor(Math.random()*10);
+			b1.onclick = function(){
+				b.textContent= `${b2}${b3}${b4}${b5}`;
+				b2 = Math.floor(Math.random()*10);
+				b3 = Math.floor(Math.random()*10);
+				b4 = Math.floor(Math.random()*10);
+				b5 = Math.floor(Math.random()*10);
+			}
+			//第三题
+			let c = document.querySelector('#six .c');
+			const c1 = document.querySelector('#six select');
+			let c2 = document.querySelector('#six .c2');
+			const c4 = document.querySelector('#six button')
+			let c3 = document.querySelector('#six .c3');
+			c4.addEventListener('click',function(){
+				if (c1.value == '+') {
+					c3.value = Number(c.value)+Number(c2.value);
+				}else if(c1.value == '-'){
+					c3.value = Number(c.value)-Number(c2.value);
+				}else if(c1.value == '*'){
+					c3.value = Number(c.value)*Number(c2.value);
+				}else if(c1.value == '/'){
+					c3.value = Number(c.value)/Number(c2.value);
+				}
+			})
+			//第四题
+			function dd(){
+				const d1 = document.querySelector('#seven p');
+				let d = new Date();
+				d1.textContent = (`${d.getFullYear()}年${d.getMonth()}月${d.getDay()}日${d.getHours()}时${d.getMinutes()}分${d.getSeconds()}秒星期${d.getDay()}`);
+			}
+			dd();
+			setInterval(dd,1000);
+		</script>
+	</body>
+</html>
